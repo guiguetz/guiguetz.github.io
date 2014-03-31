@@ -13,8 +13,8 @@ function auto() {
   pontos += timed;
   refresh();
 }
-
-setInterval(refresh(), 1000);
+setInterval(refresh, 1000);
+setInterval(auto, 1000);
 
 function notManual() {
   timed+=1;
