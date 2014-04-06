@@ -6,6 +6,7 @@ var timed = 0;
 var tier1 = 0;
 var tier2 = 0;
 
+setInterval(refresh(), 1000);
 
 function manual() {
   pontos += clique;
@@ -16,7 +17,6 @@ function auto() {
   pontos += timed;
   refresh();
 }
-setInterval(refresh, 1000);
 
 function notManual1() {
   timed+=1;
