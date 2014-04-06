@@ -1,21 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Falcatrua: The Game</title>
-<link type="text/css" rel="stylesheet" href="css/style.css"/>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Falcatrua: The Game
+    </title>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
-<!-- Start your code here -->
-  <div id="container">
-    <button onclick="manual()">Cometer delito</button>
-    <div id="QtFPC">+1.00 FP</div>
-    <button onclick="upgrade()">Intimidar</button>
-    <div id="custo1">10.00 FP</div>
-    <button onclick="notManual()">Come&ccedil;ar s&eacute;rie de delitos</button>
-    <div id="QtFPS">+1 FP/s</div>
-    <div id="mostrador">0.00 Falcatruas</div>
-  </div>
-<!-- End your code here -->
-<script type="text/javascript" src="js/script.js"></script>
+  <body>
+    <!-- Start your code here -->
+    <div id="container">
+      <div id="holder">
+        <div id="col1">
+          <p>
+            Equips
+          </p>
+          <br/>
+          <button onclick="upgrade(1)">
+            Intimidar
+          </button>
+          <div id="custo">
+            10.00 FP
+          </div>
+          
+          <button onclick="upgrade(5)">
+            Intimidar
+          </button>
+          <div id="custo">
+            10.00 FP
+          </div>
+        </div>
+      </div>
+      
+      <div id="holder">
+        <div id="col2">
+          <button onclick="manual()">
+            Cometer delito
+          </button>
+          <div id="QtFPC">
+            +1 FP
+          </div>
+        </div>
+      </div>
+      
+      <div id="holder">
+        <div id="col3">
+          
+          <p>
+            ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âreas de Crime
+          </p>
+          <br/>
+          <button onclick="notManual1()">
+            Tier I (
+            <span id="Tier1">
+              0
+            </span>
+            )
+          </button>
+          <div>
+            +1 FP/s
+          </div>
+          
+          <button onclick="notManual2()">
+            Tier II (
+            <span id="Tier2">
+              0
+            </span>
+            )
+          </button>
+          <div>
+            +2 FP/s
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <span id="mostrador">
+          0.00
+        </span>
+        Falcatruas
+      </div>
+      
+    </div>
+    <!-- End your code here -->
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

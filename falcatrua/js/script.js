@@ -1,8 +1,11 @@
 /* Write JavaScript here */
-var pontos = 0;
 var clique = 1;
 var custo = 10;
+var pontos = 0;
 var timed = 0;
+var tier1 = 0;
+var tier2 = 0;
+
 
 function manual() {
   pontos += clique;
@@ -14,24 +17,31 @@ function auto() {
   refresh();
 }
 setInterval(refresh, 1000);
-setInterval(auto, 1000);
 
-function notManual() {
+function notManual1() {
   timed+=1;
+  tier1+=1;
 }
 
-function upgrade() {
+function notManual2() {
+  timed+=1;
+  tier2+=1;
+}
+
+function upgrade(num) {
   if (pontos>=custo) {
-    clique+=1;
+    clique+=num;
     pontos-=custo; 
-    custo=10*Math.pow(1.15,clique);
+    custo[num]=10*Math.pow(1.15,(num));
   }
   refresh();
 }
 
 function refresh() {
+  auto();
   document.getElementById("QtFPC").innerHTML = ("+" + clique + " FP");
-  document.getElementById("custo1").innerHTML = (custo.toFixed(2) + " FP");
-  document.getElementById("QtFPS").innerHTML = ("+" + timed + " FP/s");
-  document.getElementById("mostrador").innerHTML = (pontos.toFixed(2) + " Falcatruas");
+  document.getElementById("custo").innerHTML = (custo.toFixed(2) + " FP");
+  document.getElementById("Tier1").innerHTML = (tier1);
+  document.getElementById("Tier2").innerHTML = (tier2);
+  document.getElementById("mostrador").innerHTML = (pontos.toFixed(2));
 }

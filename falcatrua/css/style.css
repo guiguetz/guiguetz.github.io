@@ -13,7 +13,6 @@ button{
 
 button:hover {
   background-image: linear-gradient(to bottom, #cf2b4f, #980021 950%);
-  background-color:#0b8b9a;
 }
 
 
@@ -21,4 +20,18 @@ button:hover {
   padding: 5px;
   background-color: #AFCFFF;
   text-align: center;
+}
+
+#holder {
+  display: inline-block;
+  width: 30%;
+  height: 250px;
+  padding: 5px;
+  background-color: #F0FFFF;
+  vertical-align: middle;
+}
+
+#col2 {
+  height: 146px;
+  vertical-align: middle;
 }
