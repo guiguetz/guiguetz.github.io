@@ -7,7 +7,11 @@ var tier1 = 0;
 var tier2 = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 setInterval(refresh, 1000);
+=======
+setInterval(refresh(), 1000);
+>>>>>>> d862d46bbb4e600d33e4a572dac3387a06a613fc
 =======
 setInterval(refresh(), 1000);
 >>>>>>> d862d46bbb4e600d33e4a572dac3387a06a613fc
@@ -53,8 +57,12 @@ function upgrade(num) {
 function refresh() {
   document.getElementById("mostrador").innerHTML = (pontos.toFixed(2));
 <<<<<<< HEAD
+<<<<<<< HEAD
   pontos += timed;
 }
+=======
+}
+>>>>>>> d862d46bbb4e600d33e4a572dac3387a06a613fc
 =======
 }
 >>>>>>> d862d46bbb4e600d33e4a572dac3387a06a613fc
