@@ -1,0 +1,21 @@
+body {
+  background:url(http://imgs.ga/i/nz5321or3viv.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#pixie {
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+.etiqueta {
+  position:absolute;
+  z-index:-100000;
+  font-size:50px;
+  color:white;
+  top:80px;
+  left:250px;
+  text-align:center;
+  vertical-align:middle;
+}
