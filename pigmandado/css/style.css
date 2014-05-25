@@ -1,0 +1,258 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+	background: #7FCFE3;
+}
+
+#cnv {
+  position: fixed;
+  top:0px;
+  left:0px;
+  z-index: 25;
+}
+
+.container {
+	position: relative;
+	margin: 150px auto 0 auto;
+	width: 155px;
+	height: 200px;
+}
+
+.abs {
+	position: absolute;
+}
+
+.corpo {
+	background:#fdbfca;
+	width:200px;
+	height:120px;
+	border-radius:100%;
+	z-index: -10;
+}
+
+.pata1 {
+	background:#fdbfca;
+	width:20px;
+	height:35px;
+	border-radius:100%;
+	position: absolute;
+	top: 100px;
+	left: 40px;
+	z-index: -1;
+}
+
+.pata2 {
+	background:#e3abb5;
+	width:20px;
+	height:35px;
+	border-radius:100%;
+	position: absolute;
+	top: 100px;
+	left: 60px;
+	z-index: -1;
+}
+
+.pata3 {
+	background:#fdbfca;
+	width:20px;
+	height:35px;
+	border-radius:100%;
+	position: absolute;
+	top: 100px;
+	left: 120px;
+	z-index: -1;
+}
+
+.pata4 {
+	background:#e3abb5;
+	width:20px;
+	height:35px;
+	border-radius:100%;
+	position: absolute;
+	top: 100px;
+	left: 140px;
+	z-index: -1;
+}
+
+.cabeca {
+	background:#fdbfca;
+	width:110px;
+	height:110px;
+	border-radius:100%;
+	border-right: 10px solid #ff4c4c;
+	z-index: 0;
+	position: absolute;
+	top:0px;
+	left:-55px;
+}
+
+.orelha1 {
+	width: 0; 
+	height: 0; 
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 35px solid #fdbfca;
+	z-index: 20;
+	position: absolute;
+	top:22px;
+	left:22px;
+}
+
+.orelha2 {
+	width: 0; 
+	height: 0; 
+	border-left: 17px solid transparent;
+	border-right: 17px solid transparent;
+	border-top: 37px solid #e3abb5;
+	z-index: 10;
+	position: absolute;
+	top:20px;
+	left:22px;
+}
+
+.olho1 {
+	background: #FFFFFF;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	z-index: 20;
+	position: absolute;
+	top: 35px;
+	left: -30px;
+}
+
+.focinho {
+	width: 25px;
+	height: 35px;
+	background: #fdbfca;
+	border-radius: 100%;
+	position: absolute;
+	top: 45px;
+	left: -65px;
+}
+
+.narina {
+	width:5px;
+	height:15px;
+	background:#e3abb5;
+	border-radius:100%;
+	position:absolute;
+	top:55px;
+	left:-60px;
+}
+
+.sombra {
+	width: 275px;
+	height: 5px;
+	background: #77AFBD;
+	border-radius: 100%;
+	position: absolute;
+	bottom: 60px;
+	left: -70px;
+}
+
+.sombra2 {
+	width: 145px;
+	height: 5px;
+	background: #77AFBD;
+	border-radius: 100%;
+	position: absolute;
+	bottom: 59px;
+	left: 250px;
+}
+
+
+.bola {
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	background: #c0c0c0;
+	position: absolute;
+	top: -15px;
+	right: -250px;
+	border-top: #B4B4B4 solid;
+	border-right: #B4B4B4 solid;
+}
+
+.elo1, .elo2, .elo3, .elo4, .elo5, .elo6 {
+	width: 30px;
+	height: 15px;
+	border: 3px solid #c0c0c0;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.elo1 {
+	bottom: 70px;
+	left: 160px;
+	-ms-transform: rotate(30deg); /* IE 9 */
+	-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+	transform: rotate(30deg);
+}
+
+.elo2 {
+	bottom: 70px;
+	left: 180px;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+}
+
+
+.elo3 {
+	bottom: 70px;
+	left: 200px;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+	transform: rotate(90deg);
+}
+
+
+.elo4 {
+	bottom: 70px;
+	left: 220px;
+	-ms-transform: rotate(30deg); /* IE 9 */
+	-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+	transform: rotate(30deg);
+}
+
+
+.elo5 {
+	bottom: 70px;
+	left: 240px;
+	-ms-transform: rotate(150deg); /* IE 9 */
+	-webkit-transform: rotate(150deg); /* Chrome, Safari, Opera */
+	transform: rotate(150deg);
+}
+
+
+.elo6 {
+	bottom: 70px;
+	left: 260px;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+}
+
+.grilhao {
+	width: 30px;
+	height: 10px;
+	border-radius: 3px;
+	background: #818181;
+	position: absolute;
+	top: 115px;
+	left: 140px;
+	z-index: 10;
+	-ms-transform: rotate(-20deg); /* IE 9 */
+	-webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+	transform: rotate(-20deg);
+}
+
+.texto {
+	width: 375px;
+	margin-left: -20px !important;
+	margin: 0 auto;
+	font-size: 50px;
+	font-family: Lato, sans-serif;
+	text-align: center;
+}
