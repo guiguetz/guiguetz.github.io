@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+	background: #baa2ff;
+	font-family: Lato;
+	height: 100%;
+}
+
+h1 {
+	font-size: 65px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+h2 {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.borda {
+	position: relative;
+	width: 750px;
+	height: 400px;
+	background: white;
+	border-radius: 40px;
+	margin: 0 auto;
+}
+
+.useful {
+	position: absolute;
+	background: #dedada;
+	background-image: linear-gradient(to bottom, #fffccc , #fffaaa 130%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+	border-radius: 40px;
+}
+
+.foto {
+width: 180px;
+height: 240px;
+background: #E4E2E2;
+position: absolute;
+top: 25px;
+left: 25px;
+}
+
+.foto>p {
+	line-height: 220px;
+	font-size: 250px;
+	color: #979797;
+	margin: 0;
+}
+
+.nome, .endereco, .telefone, .email {
+width: 450px;
+height: 20px;
+background: #E4E2E2;
+border-radius: 10px;
+position: absolute;
+}
+
+.nome>p, .endereco>p, .telefone>p, .email>p {
+line-height: 20px;
+font-size: 15px;
+margin: 0 0 0 5px;
+text-align: left;
+}
+
+.nome {
+top: 80px;
+left: 230px;
+}
+
+.endereco {
+top: 105px;
+left: 230px;
+}
+
+.email {
+top: 130px;
+left: 230px;
+}
+
+.telefone {
+top: 155px;
+left: 230px;
+}
+
+.titulo {
+width: 450px;
+height: 50px;
+background: #E4E2E2;
+border-radius: 10px;
+position: absolute;
+top: 25px;
+left: 230px;
+}
+
+.titulo>p {
+line-height: 50px;
+margin: 0;
+font-size: 35px;
+font-weight: bolder;
+}
+
+.numero {
+width: 200px;
+height: 50px;
+background: #E4E2E2;
+border-radius: 10px;
+position: absolute;
+top: 200px;
+right: 32px;
+}
+
+.numero>p {
+	line-height: 50px;
+	font-size: 55px;
+	margin: 0;
+}
+
+.carimbo {
+width: 245px;
+height: 85px;
+background: #E4E2E2;
+border-radius: 10px;
+position: absolute;
+top: 180px;
+right: 237px;
+}
+
+.carimbo>p {
+	line-height: 145px;
+	margin: 0;
+}
+
+.assinatura {
+width: 657px;
+height: 65px;
+border-bottom: 1px solid black;
+position: absolute;
+top: 270px;
+right: 32px;
+}
+
+.assinatura>p {
+	margin: 0;
+	line-height: 155px;
+	vertical-align: bottom;
+}
+
+.footer {
+	text-align: center;
+}
