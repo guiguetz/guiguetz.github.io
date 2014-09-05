@@ -1,15 +1,6 @@
-  var div = $(".count2");
+
   var date = new Date();
-  
-  var dia = date.getDay();
-  var hora = date.getHours();
-  var minuto = date.getMinutes();
-  var segundo = date.getSeconds();
-  
-  var newDia = addZero(5-dia);
-  var newHora = addZero(24-hora);
-  var newMinuto = addZero(60-minuto);
-  var newSegundo = addZero(60-segundo);
+var dia = date.getDay();
 
 $(document).ready(function(){ 
   action();
@@ -24,6 +15,20 @@ if(dia ==6) {
 }
 
 function action() {
+
+  var div = $(".count2");
+
+  var date = new Date();
+  
+  var hora = date.getHours();
+  var minuto = date.getMinutes();
+  var segundo = date.getSeconds();
+
+  var newDia = addZero(5-dia);
+  var newHora = addZero(24-hora);
+  var newMinuto = addZero(60-minuto);
+  var newSegundo = addZero(60-segundo);
+
   div.empty();
 
   if (dia == 7) {
