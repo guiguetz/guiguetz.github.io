@@ -1,7 +1,7 @@
   var div = $(".count2");
   var date = new Date();
   
-  var dia = 6;//date.getDay();
+  var dia = date.getDay();
   var hora = date.getHours();
   var minuto = date.getMinutes();
   var segundo = date.getSeconds();
