@@ -1,12 +1,7 @@
-$(document).ready(function(){ 
-  action();
-});
-
-function action() {
   var div = $(".count2");
   var date = new Date();
   
-  var dia = date.getDay();
+  var dia = 6;//date.getDay();
   var hora = date.getHours();
   var minuto = date.getMinutes();
   var segundo = date.getSeconds();
@@ -16,6 +11,19 @@ function action() {
   var newMinuto = addZero(60-minuto);
   var newSegundo = addZero(60-segundo);
 
+$(document).ready(function(){ 
+  action();
+});
+
+if(dia ==6) {
+  $('body')
+  .css('background-image',"url('1.gif')")
+  .css('background-repeat','no-repeat;')
+  .css('background-size','100%')
+  .css('background-color','rgb(0,0,0,0.2)');
+}
+
+function action() {
   div.empty();
 
   if (dia == 7) {
