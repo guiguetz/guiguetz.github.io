@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  margin:0;
+  text-align: center;
+}
+
+body {
+  background-color: #69D2E7;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  flex-align: center;
+  
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  flex-pack: center;
+}
