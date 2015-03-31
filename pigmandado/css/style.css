@@ -1,14 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+#confetti{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
 body {
 	background: #7FCFE3;
 }
 
 #cnv {
-  position: fixed;
-  top:0px;
-  left:0px;
-  z-index: 25;
+	position: fixed;
+	top:0px;
+	left:0px;
+	z-index: 25;
 }
 
 .container {
@@ -119,6 +133,17 @@ body {
 	position: absolute;
 	top: 35px;
 	left: -30px;
+}
+
+.olho2 {
+	background: #000;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	z-index: 20;
+	position: absolute;
+	top: 45px;
+	left: -20px;
 }
 
 .focinho {
