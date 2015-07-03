@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  color:#fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size:9em
+}
+
+input {
+  background: #2AABFF;
+  color: #1C73AB;
+  border: 3px solid #1C73AB;
+  border-radius:10px;
+  padding: 20px;
+  font-size:0.2em;
+}
+
+span {
+  display:none;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
