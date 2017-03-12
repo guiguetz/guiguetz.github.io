@@ -1,89 +1,98 @@
-
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guilherme Aguiar</title>
+    <meta name="author" content="Guilherme Aguiar" />
+    <meta name="description" content="Desenvolvedor web de Guarujá - SP." />
+    <meta name="keywords"  content="html,css,javascript,jquery,desenvolvedor web,sites em guarujá,criação de sites,criação de sites em guarujá" />
+    <meta name="Resource-type" content="Document" />
 
-    <!-- Página altamente baseada na original, do @thebarrytone. -->
 
-    <title>Site Caralhudo</title>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+              sectionsColor: ['#70C1B3', '#8D91C7', '#FFE066', '#F25F5C', 'whitesmoke'],
+              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+              menu: '#menu',
+            });
+        });
+    </script>
+
 </head>
-
 <body>
-    <header>
-        <h1>Esse é um caralhudo de um site.</h1>
-        <aside>E é perfeito pra caralho.</aside>
-    </header>
 
-    <h2>Sério, o que a porra você quer mais??</h2>
+<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Início</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Quem sou?</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">O que faço?</a></li>
+    <li data-menuanchor="4thPage"><a href="#4thPage">Entre em contato!</a></li>
 
-    <p>Você provavelmente faz sites e pensa que essa porra é especial. Você pensa que sua página de 13 megabytes, com efeitos de paralaxe vai te render uma merda de um troféuzinho virtual que você vai por no canto do seu site. Você acha que seus 30 quilos de arquivo jQuery e os 83 polyfills vão dar uma ereção pro IE7 porque finalmente tem um sombreado. Errado, otário. Deixa eu te descrever um site perfeito:</p>
+</ul>
 
+<div id="fullpage">
+    <div class="section active" id="section0">
+        <h1>Hello, world!</h1>
+        <p>Sou o Guilherme Aguiar. Bem vindo à minha página!</p>
+        <img src="fullPage.png" alt="fullPage" />
+    </div>
+    <div class="section" id="section1">
+        <div class="intro">
+               <h1>Ei, cara legal!</h1>
+            <p>&nbsp;</p>
+                <p>Sou o <strong>Guilherme Aguiar</strong>, programador e desenvolvedor web e atualmente moro em Guarujá, São Paulo. Comecei a fazer sites quando tinha onze anos, com um blog simples, e das tardes tentando entender o que uma tag "<strong>&lt;b&gt;</strong>" fazia ou criando layouts no photoshop foram mais de dez anos lendo, estudando e botando a mão na massa!</p>
+                <p>&nbsp;</p>
+                <p>Quando não estou envolvido em meus projetos pessoais ou profissionais, você provavelmente vai me encontrar lendo (ou escrevendo) no Medium, ouvindo música (conhecer músicas é minha segunda paixão, depois de programação em geral) ou tentando aprender algum talento novo!</p>
+            </div>
+    </div>
+    <div class="section" id="section2">
+       <div class="slide active" id="slide1">
+            <div class="intro">
+                <h1>O que faço?</h1>
+                <p>Passe para o lado, e verá alguns dos meus projetos pessoais!</p>
+            </div>
+        </div>
+        <div class="slide" id="slide2">
+            <h1>Slide 2</h1>
+        </div>
+        <div class="slide" id="slide3">
+            <h1>Slide 3</h1>
+        </div>
+    </div>
+    
+    <div class="section" id="section3">
+        <h1>Vamos tomar um café?</h1>
+        <p>Entre em contato comigo, prometo que respondo rapidinho!</p>
+        <form method="POST" action="http://formspree.io/spamguetz@gmail.com">
+          <input type="email" name="email" placeholder="Your email">
+          <textarea name="message" placeholder="Your message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+    </div>
+    
+</div>
+
+<div id="infoMenu">
     <ul>
-        <li>A merda é leve como um peido e carrega rápido</li>
-        <li>Cabe em todas essas telinhas de merda e telonas tranzudas</li>
-        <li>É igual em todos os cuzões de navegadores</li>
-        <li>Esse filho da puta é acessível pra qualquer babaca que acessa seu fodendo site</li>
-        <li>Essa merda é legível e passa a ideia necessária (se é qualquer outra que não seja fotos de 5MB de hipsters otários bebendo café)</li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">itch.io</a></li>
+        <li><a href="#">Currículo</a></li>
     </ul>
-
-    <h3>Adivinha só, seu peidão:</h3>
-
-    <p>Você. Está. Exagerando. Por que diabos você precisa de uma porra de uma bandeira que quando passo meu mouse nela, ela tremula, seu merdinha? Você gasta horas nisso e adiciona 80 kilobytes no seu site, e um bunda mole com dedos de salsicha em um iPad nunca vai ver essa bosta. Sem contar pessoas cegas, que nunca vão ver essa bosta, mas pelo menos eles são cegos então não vão ver nenhuma merda nessa sua merda de site.</p>
-
-    <p>Você não sabia, mas esse aqui é o seu site perfeito. E aí vai o porquê.</p>
-
-    <h2>É leve, caralho</h2>
-
-    <p>Essa página inteira pesa menos que aquele logo do facebook cheio de gradiente no seu site do Wordpress. Sério que cê carregou 100kb de UI jQuery só pra animar a porra do fundo de uma div? Você carregou todas as 7 fontes de uma merda de uma webfonte só pra você dizer uma merda de um "Oi." de 100px no começo do seu site? Seu toroço de cocô.</p>
-
-    <h2>É responsivo</h2>
-
-    <p>Seu paspalhão. Você achou que ia precisar de interações de mídia pra se dizer o fodalhão dos sites em todos os aparelhos, mas não. Ser o fodalhão quer dizer que ele vai se adaptar à qualquer tamanho de tela em que ele vai ser visualizado. O site não vai dar a mínima se você está num iMac ou na porra de um Tamagotchi.</p>
-
-    <h2>Essa merda funciona</h2>
-
-    <p>Olha essa merdinha. Você consegue ler... isso é, se você sabe ler, seu analfabeto funcional. Ele faz sentido. Tem uma caralhuda espiralada de uma hierarquia. Está usando tags de HTML5, então o afrescalhado do seu navegador vai saber o que fazer nessa obra prima de página.</p>
-
-    <p>Compatibilidade entre navegadores? Carrega essa bosta num IE6. Eu te desafio. Vai lá, pô.</p>
-
-    <h2>Esse é um site. Olha pra ele. Você nunca viu nenhum antes.</h2>
-
-    <p>Igual um maricas que nunca cresceu uma barba, assim não conhecendo sua forma natural, você não sabe o que um site é. Tudo que você viu são bastardizações do que deveria ser um texto informando uma merda de uma mensagem. Isso é um site de verdade, pelado como nós viemos ao mundo. Olha pra ele. É lindo!</p>
-
-    <h3>Sim, isso é uma merda de uma brincadeira, seu otário sem senso de humor</h3>
-
-    <p>Eu não estou falando que seu site devia parecer com isso. O que estou dizendo, é que todos os problemas que temos ao desenvolver um site são <strong>aqueles que nós mesmos criamos.</strong> Sites não são "bugados" a priori, eles são funcionais, de alta performance, e acessíveis. Você quebra eles com suas firulas. Seu bunda mole.</p>
-
-    <blockquote cite="https://www.vitsoe.com/us/about/good-design">"Bom design é o mínimo de design possível"<br>
-        - Algum alemão comedor de salsicha beberrão
-    </blockquote>
-
-    <h2>Testes, projetos e tudo mais</h2>
-
-    <p>Aqui vão os projetos em HTML, CSS e Javascript puros que estão neste github.</p>
-
-    <ul>
-        <li>
-            <a href="http://guiguetz.github.io/arrasta-clube">Clube do Arrastão</a>: Segundo layout que fiz, baseado no primeiro (que está logo abaixo), para um pseudo clube de pessoas que <i>arrastam</i> um pouco os limites.
-        </li>
-        <li>
-            <a href="http://guiguetz.github.io/falcatrua">Falcatrua Game</a>: O que foi o começo de um game em javascript que idealizei enquanto aprendia sobre a linguagem. Projeto em hiato atualmente.
-        </li>
-        <li>
-            <a href="http://guiguetz.github.io/fat">Fã Clube da Thats</a>: Layout que fiz de brincadeira pra um pseudo fã clube de <a href="http://twitter.com/ttttttthais/">uma amiga</a>, envolvendo HTML e CSS.
-        </li>
-        <li>
-            <a href="http://guiguetz.github.io/flappycheeto">Flappy Cheeto</a>: Baseado em um modelo de Flappy Bird logo no começo da viralização do jogo, alterei para condizer com a história de <a href="http://twitter.com/cheetorhead/">um amigo</a> que odeia banhos.
-        </li>
-        <li>
-            <a href="http://guiguetz.github.io/otacilia">Otacília</a>: Um de meus primeiros testes com os webkits de animação do HTML5, animação do nome de <a href="http://twitter.com/otaciliab">uma amiga</a>.
-        </li>
-        <li>
-            <a href="http://guiguetz.github.io/pigmandado">Pig Mandado</a>: Brincadeira com um <a href="http://twitter.com/porcoconceitual">grande amigo</a> e seu relacionamento amoroso. Minha primeira tentativa de desenhar utilizando somente HTML5 e CSS3. A animação do olho é feita utilizando do recurso canvas do próprio HTML5 (compatível no momento somente com resoluções de 1366x768)
-        </li>
-    </ul>
+</div>
 
 </body>
 </html>
