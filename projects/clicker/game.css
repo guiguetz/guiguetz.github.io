@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     background-color:#a3ce27;
     color:#44891a;
-    
+
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
@@ -10,4 +10,9 @@ canvas {
     width:832px;
     margin:0 auto;
     border: 4px solid #44891a;
+}
+.fontPreload {
+    font-family: 'Press Start 2P';
+    position:absolute;
+    left:-100px;
 }
