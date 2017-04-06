@@ -116,29 +116,31 @@ game.state.add('play', {
         //==========================//
 
         // Fundo
-        var upgradeBackdrop = this.game.add.bitmapData(250, 500);
+        /*var upgradeBackdrop = this.game.add.bitmapData(246, 500);
         upgradeBackdrop.ctx.fillStyle = '#a3ce27';
         upgradeBackdrop.ctx.strokeStyle = '#44891a';
         upgradeBackdrop.ctx.lineWidth = 3;
-        upgradeBackdrop.ctx.fillRect(0, 0, 250, 500);
-        upgradeBackdrop.ctx.strokeRect(0, 0, 250, 500);
-        this.game.cache.addBitmapData('upgradePanel', upgradeBackdrop);
+        upgradeBackdrop.ctx.fillRect(0, 0, 246, 500);
+        upgradeBackdrop.ctx.strokeRect(0, 0, 246, 500);
+        this.game.cache.addBitmapData('upgradePanel', upgradeBackdrop);*/
+        game.load.image('upgradePanel','assets/ui/upgradeBackdrop.png');
 
         // Botão padrão
-        var buttonImage = this.game.add.bitmapData(476, 48);
+        /*var buttonImage = this.game.add.bitmapData(476, 48);
         buttonImage.ctx.fillStyle = '#a3ce27';
         buttonImage.ctx.strokeStyle = '#44891a';
         buttonImage.ctx.lineWidth = 3;
         buttonImage.ctx.fillRect(0, 0, 230, 48);
         buttonImage.ctx.strokeRect(0, 0, 230, 48);
-        this.game.cache.addBitmapData('button', buttonImage);
-
+        this.game.cache.addBitmapData('button', buttonImage);*/
+        game.load.image('button','assets/ui/upgradeButton.png');
+        
         //==========================================//
         // Preload de algumas variáveis importantes //
         //==========================================//
 
         // Nível
-        this.level = 10000;
+        this.level = 1;
         // Monstros derrotados
         this.levelKills = 0;
         // Quantos monstros por nível
@@ -229,7 +231,7 @@ game.state.add('play', {
             fill: '#44891a'
         });
 
-        this.upgradePanel = this.game.add.image(10, 70, this.game.cache.getBitmapData('upgradePanel'));
+        this.upgradePanel = this.game.add.image(10, 70, 'upgradePanel');
         var upgradeButtons = this.upgradePanel.addChild(this.game.add.group());
         upgradeButtons.position.setTo(8, 8);
 
@@ -252,9 +254,9 @@ game.state.add('play', {
 
         var button;
         upgradeButtonsData.forEach(function(buttonData, index) {
-            button = state.game.add.button(0, (50 * index), state.game.cache.getBitmapData('button'));
-            button.icon = button.addChild(state.game.add.image(6, 6, buttonData.icon));
-            button.text = button.addChild(state.game.add.text(42, 6, buttonData.name + ': ' + buttonData.level, {font: '9px Press Start 2P',fill: '#44891a'}));
+            button = state.game.add.button(0, (50 * index), 'button');
+            button.icon = button.addChild(state.game.add.image(6, 7, buttonData.icon));
+            button.text = button.addChild(state.game.add.text(42, 9, buttonData.name + ': ' + buttonData.level, {font: '9px Press Start 2P',fill: '#44891a'}));
             button.details = buttonData;
             button.costText = button.addChild(state.game.add.text(42, 24, '$' + buttonData.cost, {font: '16px Press Start 2P',fill: '#44891a'}));
             button.events.onInputDown.add(state.onUpgradeButtonClick, state);
