@@ -123,7 +123,8 @@ game.state.add('play', {
         upgradeBackdrop.ctx.fillRect(0, 0, 246, 500);
         upgradeBackdrop.ctx.strokeRect(0, 0, 246, 500);
         this.game.cache.addBitmapData('upgradePanel', upgradeBackdrop);*/
-        game.load.image('upgradePanel','assets/ui/upgradeBackdrop.png');
+        game.load.image('upgradePanel', 'assets/ui/upgradeBackdrop.png');
+        game.load.image('skillPanel',   'assets/ui/backdropSkill.png');
 
         // Botão padrão
         /*var buttonImage = this.game.add.bitmapData(476, 48);
@@ -133,8 +134,10 @@ game.state.add('play', {
         buttonImage.ctx.fillRect(0, 0, 230, 48);
         buttonImage.ctx.strokeRect(0, 0, 230, 48);
         this.game.cache.addBitmapData('button', buttonImage);*/
-        game.load.image('button','assets/ui/upgradeButton.png');
-        
+        game.load.image('buttonUpgrade','assets/ui/buttonUpgrade.png');
+        //game.load.image('buttonSkill','assets/ui/buttonSkill.png');
+        game.load.spritesheet('buttonSkill','assets/ui/buttonSkillSheet.png',48,48);
+
         //==========================================//
         // Preload de algumas variáveis importantes //
         //==========================================//
@@ -149,22 +152,23 @@ game.state.add('play', {
         //O nosso player.
         this.player = {
             clickDmg: 1, // Dano por clique
-            gold: 999999, // Ouro inicial
-            dps:0 // Dano por segundo
+            gold: 0, // Ouro inicial
+            dps:0, // Dano por segundo
+            critChance: 1,
+            critDmg: 10
         };
     },
     create: function() {
-        //Uma var chamada state com esse state, só pra facilitar ao invés de passar o ~this~
         var state = this;
 
         game.stage.backgroundColor = '#a3ce27';
 
         var monsterData = [
-            {name: 'Enemy 1',    image: 'enemyTex0',  maxHealth: 1},
-            {name: 'Enemy 2',    image: 'enemyTex1',  maxHealth: 2},
-            {name: 'Enemy 3',    image: 'enemyTex2',  maxHealth: 3},
-            {name: 'Enemy 4',    image: 'enemyTex3',  maxHealth: 4},
-            {name: 'Enemy 5',    image: 'enemyTex4',  maxHealth: 5}
+            {name: 'Enemy 1',    image: 'enemyTex0',  maxHealth: 15},
+            {name: 'Enemy 2',    image: 'enemyTex1',  maxHealth: 20},
+            {name: 'Enemy 3',    image: 'enemyTex2',  maxHealth: 25},
+            {name: 'Enemy 4',    image: 'enemyTex3',  maxHealth: 30},
+            {name: 'Enemy 5',    image: 'enemyTex4',  maxHealth: 35}
         ];
 
         this.monsters = this.game.add.group();
@@ -254,7 +258,7 @@ game.state.add('play', {
 
         var button;
         upgradeButtonsData.forEach(function(buttonData, index) {
-            button = state.game.add.button(0, (50 * index), 'button');
+            button = state.game.add.button(0, (50 * index), 'buttonUpgrade');
             button.icon = button.addChild(state.game.add.image(6, 7, buttonData.icon));
             button.text = button.addChild(state.game.add.text(42, 9, buttonData.name + ': ' + buttonData.level, {font: '9px Press Start 2P',fill: '#44891a'}));
             button.details = buttonData;
@@ -264,11 +268,63 @@ game.state.add('play', {
             upgradeButtons.addChild(button);
         });
 
+
+        this.skillPanel = this.game.add.image(252, 70, 'skillPanel');
+        var skillButtons = this.skillPanel.addChild(this.game.add.group());
+        skillButtons.position.setTo(8, 8);
+
+        var skillButtonsData = [
+            {
+                name: 'Steel Rain',
+                desc: 'Swarms your enemy with hits!',
+                cooldown: 11,
+                skillHandler: function () {
+                    this.game.time.events.repeat(100,10,this.onClickMonster,this,state);
+                }
+            },
+            {
+                name: 'Time to Gamble',
+                desc: 'Feelin\' lucky, eh? Increase your critical chance',
+                cooldown: 11,
+                skillHandler: function() {
+                    var oldCrit = state.player.critChance;
+                    this.player.critChance = 100;
+                    this.game.time.events.add(Phaser.Timer.SECOND * 5,function(oldCrit){
+                        this.player.critChance = oldCrit;
+                    },this,oldCrit);
+                }
+            },
+            {
+                name: 'Anger',
+                desc: 'Unleash your fury! Critical damage increased temporarily',
+                cooldown: 11,
+                skillHandler: function() {
+                    var oldCrit = state.player.critDmg;
+                    this.player.critDmg = oldCrit * 10;
+                    this.game.time.events.add(Phaser.Timer.SECOND * 5,function(oldCrit){
+                        this.player.critDmg = oldCrit;
+                    },this,oldCrit);
+                }
+            }
+        ];
+
+        var skillButton;
+        skillButtonsData.forEach(function(buttonData,index) {
+            skillButton = this.game.add.button(0, 56 * index, 'buttonSkill','',this,1,0,2);
+            //            skillButton.setFrames(4,2,5);
+            skillButton.events.onInputDown.add(state.onSkillButtonClick, state);
+            skillButton.events.onInputOver.add(state.onSkillButtonHover, state);
+            skillButton.events.onInputOut.add(state.onSkillButtonOut, state);
+            skillButton.text = skillButton.addChild(state.game.add.text(9, 17, "", {font: '15px Press Start 2P',fill: '#44891a'}));
+            skillButton.details = buttonData;
+            skillButtons.addChild(skillButton);
+        });
+
         this.dpsTimer = this.game.time.events.loop(100, this.onDPS, this);
 
         // setup the world progression display
         this.levelUI = this.game.add.group();
-        this.levelUI.position.setTo(this.game.world.centerX, 30);
+        this.levelUI.position.setTo(this.game.world.centerX + 100, 30);
         this.levelText = this.levelUI.addChild(this.game.add.text(0, 0, 'Level: ' + this.level, {
             font: '24px Press Start 2P',
             fill: '#44891a'
@@ -277,9 +333,21 @@ game.state.add('play', {
             font: '24px Press Start 2P',
             fill: '#44891a'
         }));
-        console.log(this.upgradePanel);
+        //---------------
+        this.levelSkillText = this.levelUI.addChild(this.game.add.text(0, 70, "", {
+            font: '16px Press Start 2P',
+            fill: '#44891a'
+        }));
+        this.levelSkillDescText = this.levelUI.addChild(this.game.add.text(0, 95, "", {
+            font: '10px Press Start 2P',
+            fill: '#44891a',
+            wordWrap: true,
+            wordWrapWidth: 250
+        }));
+        //--------------
     },
     update: function() {
+        //sdadsa
     },
     render: function() {   
     },
@@ -287,15 +355,21 @@ game.state.add('play', {
     //====================//
     // Eventos do Monstro //
     //====================//
+    onClickMonster: function(monster) {
+        var dmg;
+        if (Phaser.Utils.chanceRoll(this.player.critChance)) {
+            dmg = this.player.critDmg * this.player.clickDmg;
+        } else {
+            dmg = this.player.clickDmg;
+        }
 
-    onClickMonster: function(monster,pointer) {
-        this.currentMonster.damage(this.player.clickDmg);
-        this.monsterHealthText.text = this.currentMonster.alive ? numeral(this.currentMonster.health).format('0a') + ' HP' : 'DEAD';
+        this.currentMonster.damage(dmg);
+        this.monsterHealthText.text = this.currentMonster.alive ? numeral(this.currentMonster.health).format('0.0a') + ' HP' : 'DEAD';
 
         var dmgText = this.dmgTextPool.getFirstExists(false);
         if (dmgText) {
-            dmgText.text = numeral(this.player.clickDmg).format('0a');
-            dmgText.reset(pointer.positionDown.x, pointer.positionDown.y);
+            dmgText.text = numeral(dmg).format('0.0a');
+            dmgText.reset(this.currentMonster.x - 30,this.currentMonster.y);
             dmgText.alpha = 1;
             dmgText.tween.start();
         }
@@ -328,11 +402,6 @@ game.state.add('play', {
         this.monsterNameText.text = monster.details.name;
         this.monsterHealthText.text = monster.health + 'HP';
     },
-
-    //==================//
-    // Eventos da Moeda //
-    //==================//
-
     onClickCoin: function(coin) {
         if (!coin.alive) {
             return;
@@ -344,11 +413,6 @@ game.state.add('play', {
         // remove the coin
         coin.kill();
     },
-
-    //======================//
-    // Eventos dos Upgrades //
-    //======================//
-
     onUpgradeButtonClick: function(button, pointer) {
         function getAdjustedCost() {
             return Math.ceil(button.details.cost * Math.pow(1.16,button.details.level));
@@ -363,11 +427,6 @@ game.state.add('play', {
             button.details.purchaseHandler.call(this, button, this.player);
         }
     },
-
-    //=============================//
-    // Eventos de dano por segundo //
-    //=============================//
-
     onDPS: function() {
         if (this.player.dps > 0) {
             if (this.currentMonster && this.currentMonster.alive) {
@@ -377,5 +436,36 @@ game.state.add('play', {
                 this.monsterHealthText.text = this.currentMonster.alive ? numeral(Math.round(this.currentMonster.health)).format('0a') + ' HP' : 'DEAD';
             }
         }
+    },
+    onSkillButtonClick: function(button) {
+        button.inputEnabled = false;
+        button.details.skillHandler.call(this, button);
+
+        button.setFrames(1,1,1,1);
+
+        var timer = this.game.time.create();
+
+        var timerEvent = timer.add(Phaser.Timer.SECOND * button.details.cooldown, function(){
+            button.inputEnabled = true;
+            button.text.setText("");
+            button.setFrames(1,0,1,1);
+            timer.stop();
+        });
+
+        timer.repeat((Phaser.Timer.SECOND * button.details.cooldown) * 0.1, 10, function(){
+            var cd = Math.round(timer.ms/1000);
+            console.log("cd:"+cd)
+            button.setFrames(cd,cd,cd,cd)
+            button.text.setText("");
+        },this);
+        timer.start();
+    },
+    onSkillButtonHover: function(button){
+        this.levelSkillText.setText(button.details.name)
+        this.levelSkillDescText.setText(button.details.desc)
+    },
+    onSkillButtonOut: function(button){
+        this.levelSkillText.setText("")
+        this.levelSkillDescText.setText("")
     }
 });
