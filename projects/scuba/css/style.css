@@ -1,0 +1,168 @@
+body {
+    font-family:"Lato", sans-serif;
+    background:#EBE7B7;
+}
+
+body, body a, body p {
+    color:#001F21;
+}
+
+h1 {
+    font-size:1em;  
+}
+
+.flex {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.container-full {
+    width:100%;
+}
+
+.container-half {
+    width:50%;
+}
+
+a {
+    text-decoration:none;
+    cursor:pointer;
+    opacity:.6;
+    transition:.3s;
+}
+a:hover {
+    opacity:1;
+}
+
+.fab,.fas {
+    font-size: 3em;
+}
+
+.navbar {
+    justify-content:flex-end;
+}
+
+.navbar h1 {
+    margin:0;
+}
+
+.navbar-item {
+    min-height: 75px;
+    min-width: 75px;
+}
+
+.navbar .logo {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3em;
+    font-weight:700;
+    padding: 0 25px;
+    margin-right: auto;
+}
+
+.content {
+    justify-content:space-around;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("https://i.imgur.com/4P5eAB9.png");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.upcoming-shows, .embed {
+    background: url('https://i.imgur.com/4P5eAB9.png') no-repeat center center fixed;
+    background: rgba(2,155,153,0.1);
+
+    min-height: 500px;
+    width: calc(calc(100% / 2) - 200px);
+    padding: 20px 0;
+}
+
+.upcoming-shows {
+    flex-direction:column;
+    flex-grow: 2
+}
+
+.event {
+    background: rgba(255,255,255,0.3);
+    border-top:1px solid #001F21;
+    padding: 0 40px;
+}
+
+.event:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.date {
+    font-weight:600;
+    padding: 8px 20px 8px 0;
+}
+
+.details {
+    min-width:500px;
+}
+
+.embed {
+    flex-grow: 1
+}
+
+.member {
+    width: calc(calc(100% / 4) - 10px);
+    height: 400px;
+    text-align: center;
+    position: relative;
+
+    background: url('http://placehold.it/475') center no-repeat;
+    margin: 15px 0;
+}
+
+.member:nth-child(1) {
+    background: url('../img/member-1.jpg') center no-repeat;
+
+}
+.member:nth-child(2) {
+    background: url('../img/member-2.jpg') center no-repeat;
+
+}
+.member:nth-child(3) {
+    background: url('../img/member-3.jpg') center no-repeat;
+
+}
+.member:nth-child(4) {
+    background: url('../img/member-4.jpg') center no-repeat;
+
+}
+
+
+.member p {
+    background: #fff;
+    width: 100%;
+    min-height: 25%;
+    height:auto;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+
+    padding: 10px 0;
+    text-align: center;
+}
+
+.member-name {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
