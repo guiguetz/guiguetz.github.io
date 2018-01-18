@@ -1,98 +1,38 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guilherme Aguiar</title>
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+            body {
+                min-height: 100vh;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Guilherme Aguiar</title>
-    <meta name="author" content="Guilherme Aguiar" />
-    <meta name="description" content="Desenvolvedor web de Guarujá - SP." />
-    <meta name="keywords"  content="html,css,javascript,jquery,desenvolvedor web,sites em guarujá,criação de sites,criação de sites em guarujá" />
-    <meta name="Resource-type" content="Document" />
+                background: #141E30;
+                background: -webkit-linear-gradient(to right, #243B55, #141E30);
+                background: linear-gradient(to right, #243B55, #141E30);
+            }
 
-
-    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="examples.css" />
-
-    <!--[if IE]>
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
-    <![endif]-->
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-    <script type="text/javascript" src="jquery.fullPage.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-              sectionsColor: ['#70C1B3', '#8D91C7', '#FFE066', '#F25F5C', 'whitesmoke'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-              menu: '#menu',
-            });
-        });
-    </script>
-
-</head>
-<body>
-
-<ul id="menu">
-    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Início</a></li>
-    <li data-menuanchor="secondPage"><a href="#secondPage">Quem sou?</a></li>
-    <li data-menuanchor="3rdPage"><a href="#3rdPage">O que faço?</a></li>
-    <li data-menuanchor="4thPage"><a href="#4thPage">Entre em contato!</a></li>
-
-</ul>
-
-<div id="fullpage">
-    <div class="section active" id="section0">
-        <h1>Hello, world!</h1>
-        <p>Sou o Guilherme Aguiar. Bem vindo à minha página!</p>
-        <img src="fullPage.png" alt="fullPage" />
-    </div>
-    <div class="section" id="section1">
-        <div class="intro">
-               <h1>Ei, cara legal!</h1>
-            <p>&nbsp;</p>
-                <p>Sou o <strong>Guilherme Aguiar</strong>, programador e desenvolvedor web e atualmente moro em Guarujá, São Paulo. Comecei a fazer sites quando tinha onze anos, com um blog simples, e das tardes tentando entender o que uma tag "<strong>&lt;b&gt;</strong>" fazia ou criando layouts no photoshop foram mais de dez anos lendo, estudando e botando a mão na massa!</p>
-                <p>&nbsp;</p>
-                <p>Quando não estou envolvido em meus projetos pessoais ou profissionais, você provavelmente vai me encontrar lendo (ou escrevendo) no Medium, ouvindo música (conhecer músicas é minha segunda paixão, depois de programação em geral) ou tentando aprender algum talento novo!</p>
-            </div>
-    </div>
-    <div class="section" id="section2">
-       <div class="slide active" id="slide1">
-            <div class="intro">
-                <h1>O que faço?</h1>
-                <p>Passe para o lado, e verá alguns dos meus projetos pessoais!</p>
-            </div>
-        </div>
-        <div class="slide" id="slide2">
-            <h1>Slide 2</h1>
-        </div>
-        <div class="slide" id="slide3">
-            <h1>Slide 3</h1>
-        </div>
-    </div>
-    
-    <div class="section" id="section3">
-        <h1>Vamos tomar um café?</h1>
-        <p>Entre em contato comigo, prometo que respondo rapidinho!</p>
-        <form method="POST" action="http://formspree.io/spamguetz@gmail.com">
-          <input type="email" name="email" placeholder="Your email">
-          <textarea name="message" placeholder="Your message"></textarea>
-          <button type="submit">Send</button>
-        </form>
-    </div>
-    
-</div>
-
-<div id="infoMenu">
-    <ul>
-        <li><a href="#">Github</a></li>
-        <li><a href="#">itch.io</a></li>
-        <li><a href="#">Currículo</a></li>
-    </ul>
-</div>
-
-</body>
+            h1,h2,a {
+                font-family: 'Titillium Web', sans-serif;
+                color: #ddd;
+                font-weight: 700;
+            }
+            a {
+                text-decoration: none;
+                font-size: 5vw;
+            }
+            h2 {
+                font-size: 2vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a href="mailto:guilhermebruno&#46;aguiar&#64;gmail&#46;com">guilhermebruno&#46;aguiar&#64;gmail&#46;com</a></h1>  
+        <h2>challenge everything</h2>
+    </body>
 </html>
