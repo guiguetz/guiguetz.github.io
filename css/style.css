@@ -50,3 +50,7 @@ section .theme {
     padding: 5px 15px;
     border-radius: 5px;
 }
+
+.cp_embed_wrapper {
+    border: 1px solid #555;
+}
